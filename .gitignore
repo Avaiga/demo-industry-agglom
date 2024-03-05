@@ -1,0 +1,17 @@
+venv
+.venv*
+**/__pycache__
+.mypy_cache
+.vscode
+.pytest_cache
+.data*
+data.private
+notebooks.private
+concepts
+issues
+data/convert_csv_to_parquet.py
+data/Proximity-Adjusted-LQ.zip
+data/Proximity-Adjusted LQ.csv
+data/Proximity-Adjusted LQ Metadata.csv
+data/Proximity-Adjusted LQ.parquet
+*.zip
