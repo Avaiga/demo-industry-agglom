@@ -13,7 +13,8 @@ def get_data_df():
     parquet_path = _DATA_DIR / "Proximity-Adjusted-LQ.parquet"
     if parquet_path.exists():
         return pd.read_parquet(parquet_path)
-    dtypes = pickle.load(open(_DATA_DIR / "dtypes.pkl", "rb"))
+    with open(_DATA_DIR / "dtypes.pkl", "rb") as f:
+        dtypes = pickle.load(f)
     df = pd.read_csv(_DATA_DIR / "Proximity-Adjusted-LQ.csv", dtype=dtypes)
     df.to_parquet(parquet_path)
     return df

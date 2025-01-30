@@ -293,7 +293,7 @@ def on_change(state, var_name, var_value):
             & (df["PA-LQ_Code"] == state.selected_lq_code)
             & (df["Year"] == state.selected_year)
         ]
-        indices = state.selected_indices
+        indices = state.selected_indices[0]
         if indices:
             state.mean_value = _df.iloc[indices]["PA-LQ_Data"].mean()
         else:
@@ -303,7 +303,7 @@ def on_change(state, var_name, var_value):
 if __name__ == "__main__":
     gui = Gui(page=md)
     gui_properties = {
-        "dark_mode": False,
+        "dark_mode": True,
         "title": "🏭 Measuring Industrial Agglomeration",
         "run_browser": False,
     }
